@@ -39,11 +39,10 @@ mod my_module {
             // TODO: Complete the function body. You can do it!
             let mut new_string=string.clone();
             match command {
-                Command::Uppercase=>new_string=new_string.trim().to_tring(),
+                Command::Uppercase=>new_string=new_string.to_uppercase(),
+                Command::Trim=>new_string = new_string.trim().to_string(),
                 Command::Append(count)=>{
-                    for_in0..*count{
-                        new_string.push_str("bar");
-                    }
+                    new_string = new_string + &("bar".repeat(*count))
                 }
             }
             output.push(new_string);
